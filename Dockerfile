@@ -1,5 +1,6 @@
 FROM php:apache
 MAINTAINER Jonas Strassel <jo.strassel@gmail.com>
+RUN apt-get update && apt-get install -my wget gnupg
 # Install git ant and java
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get -y install \
@@ -13,7 +14,7 @@ RUN apt-get -y install \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
-    libpng12-dev \
+    libpng-dev \
     libmemcached-dev \
     zlib1g-dev \
     imagemagick
